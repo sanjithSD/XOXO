@@ -22,6 +22,13 @@ body{
     overflow: hidden;
     user-select: none;
 }
+#logo{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height:60px;
+}
 .Intro{
    position: absolute;
    top: 0;
@@ -178,6 +185,7 @@ body{
         padding: 6px 10px;
         font-size: 20px;
     }
+   
 
 }
 @media screen and (max-width:600px){
