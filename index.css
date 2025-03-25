@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'game';
+    src: url('./Assets/GODOFWAR.TTF') format('truetype');
+    font-weight: bolder;
+   font-style: normal; 
+}
+@font-face {
+    font-family: 'game1';
+    src: url('./Assets/Game\ Of\ Squids.ttf') format('truetype');
+    font-weight: bolder;
+   font-style: normal; 
+}
+body{
+  
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+.Intro{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+   background-position: center;
+    background-attachment: fixed;
+    object-fit:cover;
+}
+.IntroHeading{
+    font-family: 'game1',sans-serif;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   justify-content: space-evenly;
+    color: white;
+    font-size: 80px;
+    text-shadow: 0px 0px 15px rgb(198, 78, 22);
+}
+
+.btn{
+    font-family: 'game1',sans-serif;
+    border: none;
+
+    border-radius: 20px;
+    padding: 3px 20px;
+    font-size: 25px;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 0  10px black;
+}
+.btn:hover{
+    background-color: rgb(246, 109, 46);
+    color: white;
+    transform: scale(1.2);
+    transform: rotate(360deg);
+    cursor: pointer;
+    box-shadow: 0 0  15px rgb(198, 78, 22);
+}
+.Container,.mainvideo{
+    display: none;
+}
+.Container{
+    font-family: 'game',sans-serif;
+    width: 100vw;
+    height:100vh;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.gridbox{
+    position: relative;
+    display: grid;
+    border: 50px solid transparent;
+    border-image: url('./Assets/DALL·E\ 2025-03-24\ 12.34.59\ -\ A\ dark\,\ rugged\ border\ inspired\ by\ God\ of\ War\,\ featuring\ cracked\ stone\ textures\,\ ancient\ Norse\ runes\ glowing\ faintly\ red\,\ metallic\ accents\ with\ battle-.webp') 30 round;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    grid-template-rows: repeat(3 ,1fr);
+}
+
+.cell{
+    width: 150px;
+    height:150px;
+    background-color:rgba(0, 0, 0, 0.6)
+}
+.cell:hover{
+    cursor: pointer;
+   
+  
+}
+.cell img{
+    display: none;
+    width: 100%;
+    height: 100%;
+  object-fit: contain;
+}
+.btn1{
+    font-family: 'game',sans-serif;
+    border: 20px solid transparent;
+    border-image: url('./Assets/DALL·E\ 2025-03-24\ 12.34.59\ -\ A\ dark\,\ rugged\ border\ inspired\ by\ God\ of\ War\,\ featuring\ cracked\ stone\ textures\,\ ancient\ Norse\ runes\ glowing\ faintly\ red\,\ metallic\ accents\ with\ battle-.webp') 30 round;
+    padding: 3px 20px;
+    font-size: 25px;
+    background: rgba(0, 0, 0, 0.6);
+    color: rgb(236, 50, 50);
+    transition: all 0.2s ease-in-out;
+}
+.btn1:hover{
+    color: rgb(188, 183, 183);
+    cursor: pointer;
+}
+.resultimg{
+    position: absolute;
+    display: none;
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    animation: introAnimation 2.5s forwards ease-in-out;
+}
+@keyframes introAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0.2) rotate(0deg);
+        /* filter: hue-rotate(0deg); */
+    }
+    25% {
+        opacity: 0.5;
+        transform: scale(1.1) rotate(5deg);
+        /* filter: hue-rotate(90deg); */
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(0.9)rotate(-5deg);
+        /* filter: hue-rotate(180deg); */
+    }
+    75% {
+        opacity: 1;
+        transform: scale(1.2)rotate(5deg) ;
+        /* filter: hue-rotate(270deg); */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(0) rotate(0deg);
+        /* filter: hue-rotate(360deg); */
+    }
+}
+@media  screen and (max-width:768px){
+    .IntroHeading{
+
+        font-size:25px;
+    }
+    .Container{
+        padding-bottom: 60px;
+        flex-wrap: wrap-reverse;
+       align-content:space-around;
+    }
+    .gridbox{
+        border: 20px solid transparent;
+        border-image: url('./Assets/DALL·E\ 2025-03-24\ 12.34.59\ -\ A\ dark\,\ rugged\ border\ inspired\ by\ God\ of\ War\,\ featuring\ cracked\ stone\ textures\,\ ancient\ Norse\ runes\ glowing\ faintly\ red\,\ metallic\ accents\ with\ battle-.webp') 30 round;
+        grid-template-columns: repeat(3, 100px);
+        gap: 1px;
+        grid-template-rows: repeat(3 ,100px);
+        place-content: center;
+    }
+    .cell{
+        width: 100px;
+        height:100px;
+    }
+    .btn1{
+        border: 10px solid transparent;
+        border-image: url('./Assets/DALL·E\ 2025-03-24\ 12.34.59\ -\ A\ dark\,\ rugged\ border\ inspired\ by\ God\ of\ War\,\ featuring\ cracked\ stone\ textures\,\ ancient\ Norse\ runes\ glowing\ faintly\ red\,\ metallic\ accents\ with\ battle-.webp') 30 round;
+        padding: 6px 10px;
+        font-size: 20px;
+    }
+  
+
+}
